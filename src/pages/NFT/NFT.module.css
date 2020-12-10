@@ -1,0 +1,39 @@
+.image{
+    width: 400px;
+    border-radius: 30px;
+}
+
+.nftContainer{
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.75);
+    margin: 10px;
+    padding: 10px;
+}
+
+.text{
+    font-size: 20px;
+}
+
+.button{
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.alert{
+    margin: 10px 0px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px){
+    .image{
+        width: 90%;
+    }
+}

@@ -1,0 +1,92 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #2A2B2E;
+    border-radius: 8px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.image{
+    font-size: 100px
+}
+
+.stakeName{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.stakeDesc{
+    font-size: 15px;
+    color: gray
+}
+
+.text{
+    color: white;
+    font-size: 20px
+}
+
+.card{
+    border: 1px solid #DAA520;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 50px;
+    padding: 10px;
+}
+
+.stakeEarned{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.button{
+    width: 200px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    height: 40px;
+    font-size: 20px
+}
+
+.btnHarvest{
+    border: 0px;
+    background-color: green;
+    color: white;
+}
+
+.modalContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stakingText{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.exit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.exitBtn{
+    border: 0px;
+    margin: 50px 0;
+    background: tomato;
+}

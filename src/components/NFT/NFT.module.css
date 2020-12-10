@@ -1,0 +1,55 @@
+.container{
+    min-height: 200px;
+    margin-top: 200px;
+}
+
+.newton{
+    width: 300px;
+    border-radius: 30px;
+    margin: 0px 20px;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width: 400px;
+    border: 1px solid white;
+    border-radius: 35px;
+}
+
+.small{
+    width: 300px;
+}
+
+.cardText{
+    color: white;
+}
+
+.icon{
+    width: 65px;
+}
+
+@media screen and (max-width: 1000px){
+    .card{
+        width: 150px;
+        border-radius: 8px;
+    }
+    .text{
+        margin: 0px 20px;
+    }
+}

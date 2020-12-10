@@ -1,0 +1,64 @@
+.card{
+    width: 300px;
+    height: 400px;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.image{
+    width: 85px;
+    margin: 10px;
+}
+
+.tierName{
+    color: white;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.tierNameHot{
+    color: #232323;
+    background-color: #C4C4C4;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.tokenName{
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;;
+}
+
+.duration{
+    font-size: 18px;
+    color: white;
+}
+
+.percent{
+    font-size: 18px;
+    color: white;
+}
+
+p{
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 660px){
+    .card{
+        width: 250px;
+    }
+}

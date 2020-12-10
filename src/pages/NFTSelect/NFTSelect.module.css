@@ -1,0 +1,11 @@
+.container{
+    display: block;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card{
+    width: 250px;
+    border-radius: 30px;
+    margin: 20px;
+}

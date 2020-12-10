@@ -1,0 +1,53 @@
+.container{
+    width: 100%;
+    background-color: black;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.brand{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+
+.brandLogo{
+    width: 30px;
+    margin-left: 50px;
+}
+
+.buttons{
+    margin: 0px 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.connectBtn{
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 0px 20px;
+    position: absolute;
+    right: 10px
+}
+
+.wallet{
+    position: absolute;
+    right: 10px;
+    color: white;
+    font-size: 25px;
+}
+
+.menuIcon{
+    color: white;
+    margin-left: 10px;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}

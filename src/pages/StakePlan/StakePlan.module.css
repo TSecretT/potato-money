@@ -1,0 +1,76 @@
+p{
+    color: white;
+}
+
+span{
+    color: white;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+
+.barn{
+    width: 100px;
+}
+
+.tier{
+    font-size: 48px;
+    line-height: 48px;
+}
+
+.tierUnder{
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.text{
+    margin: 5px;
+    font-size: 18px;
+    color: white;
+}
+
+.blocks{
+
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 260px;
+    height: 180px;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.buttonIcon{
+    width: 30px;
+    margin: 0px 10px;
+    padding: 0px;
+}
+
+.background{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.input{
+    width: 200px;
+    margin: 20px;
+}
+
+.modalButton{
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+}
+
+.alert{
+    width: 400px;
+    margin: 10px;
+    overflow-wrap: break-word;
+}
