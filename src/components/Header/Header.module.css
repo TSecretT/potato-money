@@ -51,3 +51,16 @@
     right: 20px;
     top: 15px;
 }
+
+@media screen and (max-width: 1000px){
+    .container{
+        height: 40px;
+    }
+    .brand{
+        font-size: 25px;
+    }
+    .brandLogo{
+        width: 20px;
+        margin-left: 10px;
+    }
+}

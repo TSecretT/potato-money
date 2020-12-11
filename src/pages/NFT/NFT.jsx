@@ -3,6 +3,7 @@ import styles from './NFT.module.css';
 import gStyles from '../../styles.module.css';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
+import clsx from 'clsx';
 
 import { Row, Col, Button, Alert, Progress } from 'antd';
 
@@ -154,23 +155,23 @@ const NFT = () => {
         <Row style={{ margin: "100px 0px" }}>
             <Col xs={24} md={16}>
                 <div className={gStyles.col}>
-                    <span className={gStyles.header}>Very Rare NFT</span>
-                    <span className={gStyles.subHeader} style={{ maxWidth: 600 }}>Lock your BNB-Potato LP token to own {tier.charAt(0).toUpperCase() + tier.slice(1)} Potato NFT</span>
+                    <span className={styles.header}>Very Rare NFT</span>
+                    <span className={clsx(styles.header, styles.info)}>Lock your <span className={styles.bigHeader}>BNB-Potato LP</span> token to get <span className={styles.bigHeader}>{tier.charAt(0).toUpperCase() + tier.slice(1)} Potato NFT</span></span>
                     <div className={styles.nftContainer}>
                         {loaded? (
                             <>
-                            <span className={styles.text}>{lockTotal}/1000 minted</span>
+                            <span className={styles.text}><strong>{lockTotal}</strong>/1000 minted</span>
                             <span className={styles.text}>Lock <strong>{lockAmount}</strong> {config.lockToken.symbol} for <strong>{lockDays} minutes</strong></span>
                             <span className={styles.text}>Your balance: <strong>{balance}</strong> BNB Potato</span>
                             {isLocked? <span className={styles.text}>You can redeem at: {moment(unlockTime*1000).format("HH:mm DD/MM/YYYY")}</span> :null}
                             {hash? <Alert className={styles.alert} type={processing? "info" : (!processing && error)? "error" : "success"} message={`Transaction HASH: ${hash}`} /> : null}
                             {error? <Alert className={styles.alert} type="error" message={`Transaction Error: ${error}`} /> : null}
                             {isLocked? (
-                                <Button loading={processing} onClick={onUnstake} disabled={!redeemable} className={styles.button}>Redeem</Button>
-                            ) : <Button loading={processing} onClick={onStake} className={styles.button}>Lock {config.lockToken.symbol}</Button>}
+                                <Button type="ghost" loading={processing} onClick={onUnstake} className={styles.button} disabled={!redeemable}>Redeem</Button>
+                            ) : <Button type="ghost" loading={processing} onClick={onStake} className={styles.button}>Lock {config.lockToken.symbol}</Button>}
                             </>
                         ) : (
-                            <Progress style={{ margin: 10 }} type="circle" percent={percent} />
+                            <Progress style={{ margin: 10 }} type="circle" percent={percent} showInfo={false} />
                         )}
                     </div>
                 </div>

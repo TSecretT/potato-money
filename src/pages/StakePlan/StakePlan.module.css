@@ -74,3 +74,9 @@ span{
     margin: 10px;
     overflow-wrap: break-word;
 }
+
+@media screen and (max-width: 1000px){
+    .blocks{
+        flex-direction: column;
+    }
+}

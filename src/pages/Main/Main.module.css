@@ -1,3 +1,12 @@
-.roadster{
-    width: 800px;
+.page{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+*{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
 }

@@ -60,7 +60,7 @@ const Header = ({scrollTo}) => {
     return (
         <Row className={styles.container}>
             <Col xs={0} md={24}>
-                <Row align="middle">
+                <Row>
                     <a href="/" style={{ display: "flex", alignItems: "center" }}>
                         <img src={potato} className={styles.brandLogo} alt="brand" />
                         <span className={styles.brand}>POTATO</span>

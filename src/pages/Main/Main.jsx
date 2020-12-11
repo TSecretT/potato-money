@@ -25,19 +25,19 @@ const Main = ({scrollTo, setParallax}) => {
     }, [])
 
     return (
-        <div style={{ overflow: "hidden" }}>
-        <Parallax pages={4} ref={ref => (setParallax(ref))}>
+        <div className={styles.page}>
+            <Parallax pages={4} ref={ref => (setParallax(ref))} style={{ overflow: "hidden" }}>
 
-        <ParallaxLayer offset={0} speed={0.5}>
-            <Home />
-            <Divider style={{ height: 300 }}/>
-            <NFT />
-            <Divider style={{ height: 300 }}/>
-            <StakePlan />
-        </ParallaxLayer>
+            <ParallaxLayer offset={0} speed={0.5}>
+                <Home />
+                <Divider style={{ height: 300 }}/>
+                <NFT />
+                <Divider style={{ height: 300 }}/>
+                <StakePlan />
+            </ParallaxLayer>
 
-        </Parallax>
-        <Particles params={particlesConfig} />
+            </Parallax>
+            <Particles params={particlesConfig} />
         </div>
     )
 }

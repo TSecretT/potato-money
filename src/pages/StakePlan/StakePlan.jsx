@@ -138,7 +138,7 @@ const StakePlan = () => {
     }, [])
 
     return (
-        <div className={gStyles.page}>
+        <div className={gStyles.page} style={{ paddingBottom: 100 }}>
             <Modal
                 title={null}
                 bodyStyle={{
@@ -191,7 +191,7 @@ const StakePlan = () => {
                 </div>
             </Modal>
 
-            <div className={gStyles.col}>
+            <div className={gStyles.col} style={{ marginTop: 50 }}>
                 <img src={barn} alt="icon" className={styles.barn} />
                 <span className={styles.tier}>{tier.toUpperCase()}</span>
                 <span className={styles.underTier}>staking</span>
