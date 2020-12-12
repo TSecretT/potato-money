@@ -37,7 +37,7 @@ export class Erc20 {
 	async allowance(owner, spender) {
 		let allowedBalance = await this.contract.methods.allowance(owner, spender).call();
 		let precision = await this.getPrecision()
-		return BigNumber(allowedBalance).div(precision);
+		return this.fromBN(BigNumber(allowedBalance).div(precision))
 	}
 
 	async approveMax(sender, spender, callback) {

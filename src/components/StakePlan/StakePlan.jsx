@@ -8,23 +8,22 @@ import { useHistory } from 'react-router-dom';
 
 import StakeCard from '../../components/StakeCard/StakeCard';
 
-import earth from '../../assets/icons/earth.svg';
-import mars from '../../assets/icons/mars.svg';
-import saturn from '../../assets/icons/saturn.svg';
-import rocket_planet from '../../assets/icons/rocket-planet.svg';
+import potato_field from '../../assets/icons/farmland.png'
+import potato_greenhouse from '../../assets/icons/greenhouse.png'
+import potato_spaceport from '../../assets/icons/farm.png'
+import potato_planetstation from '../../assets/icons/potato-mars.png'
 
 const StakePlan = () => {
-
     let history = useHistory();
 
     return (
         <div className={gStyles.container}>
             <span className={gStyles.header}>Stake Plan</span>
             <div className={styles.cards}>
-                <StakeCard image={earth} tierName="LOW" tokenName={<strong>USDT</strong>} duration={<span><strong>1</strong> week</span>} percent={2} />
-                <StakeCard image={mars} tierName="MEDIUM" tokenName={<strong>BUSD</strong>} duration={<span><strong>1</strong> month</span>} percent={5} />
-                <StakeCard image={saturn} tierName="HIGH" tokenName={<strong>BNB</strong>} duration={<span><strong>1</strong> year</span>} percent={10} />
-                <StakeCard hot image={rocket_planet} tierName="ULTIMATE" tokenName={<strong>BNB-POTATO LP</strong>} duration={<span><strong>3</strong> years</span>} percent={17} />
+                <StakeCard image={potato_field} tierName="POTATO FIELD" tokenName={<strong>USDT</strong>} duration={<span><strong>1</strong> week</span>} percent={2} />
+                <StakeCard image={potato_greenhouse} tierName="POTATO GREENHOUSE" tokenName={<strong>BUSD</strong>} duration={<span><strong>1</strong> month</span>} percent={5} />
+                <StakeCard image={potato_spaceport} tierName="POTATO SPACEPORT" tokenName={<strong>BNB</strong>} duration={<span><strong>1</strong> year</span>} percent={10} />
+                <StakeCard hot image={potato_planetstation} tierName="POTATO PLANET STATION" tokenName={<strong>BNB-POTATO LP</strong>} duration={<span><strong>3</strong> years</span>} percent={17} />
             </div>
         </div>
     )

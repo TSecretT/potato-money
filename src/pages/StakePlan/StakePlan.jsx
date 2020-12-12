@@ -8,16 +8,32 @@ import { Row, Col, Button, Modal, InputNumber, Alert, Spin, Result } from 'antd'
 import Header from '../../components/Header/Header';
 import clsx from 'clsx';
 
-import barn from '../../assets/icons/barn.svg'
-import bread from '../../assets/icons/bread.svg'
+import harvest from '../../assets/icons/harvest.svg'
 import seeding from '../../assets/icons/seeding.svg'
-
+import potato_field from '../../assets/icons/farmland.png'
+import potato_greenhouse from '../../assets/icons/greenhouse.png'
+import potato_spaceport from '../../assets/icons/farm.png'
+import potato_planetstation from '../../assets/icons/potato-mars.png'
 
 import Cow from '../../contracts/cow';
 import Erc20 from '../../contracts/erc20';
 import { STAKE_LOW } from '../../config';
 
 let contract, stakeToken_erc, yieldToken_erc;
+
+const tiers = {
+    "potato-field" : potato_field,
+    "potato-greenhouse": potato_greenhouse,
+    "potato-spaceport": potato_spaceport,
+    "potato-planet-station": potato_planetstation
+}
+
+const tokens = {
+    "potato-field" : "USDT",
+    "potato-greenhouse": "BUSD",
+    "potato-spaceport": "BNB",
+    "potato-planet-station": "BNB-POTATO LP"
+}
 
 const StakePlan = () => {
     const [modalVisible, setModalVisible] = React.useState(false); // Modal visible
@@ -34,11 +50,22 @@ const StakePlan = () => {
     const [totalStaked, setTotalStaked] = React.useState("--"); // total amount of tokens staked in contract
     const [rewards, setRewards] = React.useState("--"); // my rewards
     const [canRedeem, setCanRedeem] = React.useState(); // If user can redeem tokens
+    const [allowance, setAllowance] = React.useState();
     
 
     let { tier } = useParams();
     const wallet = localStorage.wallet;
-    
+
+    const onApprove = async () => {
+        await stakeToken_erc.approveMax(wallet, STAKE_LOW.address, (err, txHash) => {
+            if(txHash) {
+                console.log(txHash);
+            }
+        })
+        .then(receipt => console.log("OK", receipt))
+        .catch(error => console.log(error))
+    }
+
     const onStake = async () => {
         clear();
         setProcessing(true);
@@ -118,8 +145,12 @@ const StakePlan = () => {
         yieldToken_erc = new Erc20(STAKE_LOW.yieldToken.address);
 
         // Get balance
-        update();
-        setInterval(update, 10000);
+        if(wallet){
+            console.log("wall", wallet)
+            setAllowance(await stakeToken_erc.allowance(wallet, STAKE_LOW.address))
+            update();
+            setInterval(update, 10000);
+        }
     }
 
     const update = async () => {
@@ -191,27 +222,33 @@ const StakePlan = () => {
                 </div>
             </Modal>
 
-            <div className={gStyles.col} style={{ marginTop: 50 }}>
-                <img src={barn} alt="icon" className={styles.barn} />
-                <span className={styles.tier}>{tier.toUpperCase()}</span>
+            <div className={gStyles.col} style={{ margin: "50px 0px" }}>
+                <img src={tiers[tier]} alt="icon" className={styles.barn} />
+                <span className={styles.tier}>{tier.toUpperCase().split('-').join(' ')}</span>
                 <span className={styles.underTier}>staking</span>
-                <span className={styles.text} style={{ margin: "50px 0" }}>Total <strong>{totalStaked}</strong> minted</span>
+                <span className={styles.text} style={{ margin: "50px 0 10px 0" }}>Deposit {tokens[tier]} token and earn Potato</span>
             </div>
 
             <div className={clsx(gStyles.row, styles.blocks)}>
                 <div className={styles.block}>
+                    <img src={harvest} alt="harvest" className={styles.icon} />
                     <p className={styles.text}><strong>{rewards}</strong></p>
                     <p className={styles.text}>earned</p>
-                    <Button style={{ position: "absolute", bottom: 15 }} className={gStyles.button} type="ghost" onClick={() => { setHarvestModalVisible(true) }}>Harvest <img src={bread} alt="bread" className={styles.buttonIcon} /></Button>
+                    <Button style={{ position: "absolute", bottom: 15 }} className={gStyles.button} type="ghost" onClick={() => { if(wallet) setHarvestModalVisible(true) }}>Harvest</Button>
                 </div>
                 <div className={styles.block}>
+                    <img src={seeding} alt="seeding" className={styles.icon} />
                     <p className={styles.text}><strong>{staked}</strong></p>
                     <p className={styles.text}>staked</p>
-                    <Button style={{ position: "absolute", bottom: 15 }} className={gStyles.button} type="ghost" onClick={() => { setModalVisible(true) }}>Stake <img src={seeding} alt="seeding" className={styles.buttonIcon} /></Button>
+                    {wallet && allowance > 0? (
+                        <Button style={{ position: "absolute", bottom: 15 }} className={gStyles.button} type="ghost" onClick={() => { setModalVisible(true) }}>Stake</Button>
+                    ) : (
+                        <Button style={{ position: "absolute", bottom: 15 }} className={gStyles.button} type="ghost" onClick={onApprove}>Approve</Button>
+                    )}
                 </div>
             </div>
             
-            <Button className={gStyles.button} type="ghost" onClick={() => { setExitModalVisible(true) }}>{"Harvest & Exit"}</Button>
+            <Button className={gStyles.button} type="ghost" onClick={() => { if(wallet) setExitModalVisible(true) }}>{"Harvest & Exit"}</Button>
         </div>
     )
 }

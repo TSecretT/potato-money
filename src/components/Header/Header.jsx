@@ -25,7 +25,7 @@ const Header = ({scrollTo}) => {
     const checkAccounts = async () => {
         const accounts = await ethereum.request({ method: 'eth_accounts' });
         setWallet(accounts[0]);
-        localStorage.setItem('wallet', accounts[0]);
+        if(accounts[0]) localStorage.setItem('wallet', accounts[0]);
     }
 
     const navigateTo = (section) => {
@@ -38,7 +38,7 @@ const Header = ({scrollTo}) => {
     
     React.useEffect(() => {
         checkAccounts();
-    }, [])
+    }, [wallet])
 
     const menu = (
         <Menu>

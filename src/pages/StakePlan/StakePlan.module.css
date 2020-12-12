@@ -41,7 +41,7 @@ span{
     align-items: center;
     position: relative;
     width: 260px;
-    height: 180px;
+    height: 220px;
     border: 1px solid white;
     border-radius: 8px;
     padding: 10px;
@@ -73,6 +73,11 @@ span{
     width: 400px;
     margin: 10px;
     overflow-wrap: break-word;
+}
+
+.icon{
+    width: 50px;
+    margin: 10px;
 }
 
 @media screen and (max-width: 1000px){
