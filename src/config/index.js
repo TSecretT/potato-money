@@ -24,5 +24,11 @@ module.exports = {
             decimals: 18,
             symbol: "NWM"
         }
+    },
+    NFT_TEXTS: {
+        "silver": 'In fact, Newton has 4 laws, and 4 law States - " Silver POTATO can attract not only NFS, but also a large yield"',
+        "gold": 'Franklin has a legendary phrase - "time is money", so he grew gold potato on his farm.',
+        "platinum": "The ancient alchemists greatly valued Diamond POTATO because of its super power, which they used for their farming experiments. Alchemists try to recreate it, but without success, since no one can decipher the recipe for creating it on the tablet of the NFT.",
+        "diamond": "Leprechauns always feel where the biggest profits are, so they decided to farm the PLATINUM POTATO using all their miners."
     }
 }

@@ -15,7 +15,7 @@ import { particlesConfig } from '../../utils/particlesConfig';
 
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 
-
+import potatoChart from '../../assets/total-supply-chart.svg'
 
 const Main = ({scrollTo, setParallax}) => {
     const history = useHistory();
@@ -30,10 +30,14 @@ const Main = ({scrollTo, setParallax}) => {
 
             <ParallaxLayer offset={0} speed={0.5}>
                 <Home />
-                <Divider style={{ height: 300 }}/>
+                <Divider style={{ height: 100 }}/>
                 <NFT />
-                <Divider style={{ height: 300 }}/>
+                <Divider style={{ height: 100 }}/>
                 <StakePlan />
+                <Divider style={{ height: 100 }}/>
+                <div className={styles.chartRow}>
+                    <img src={potatoChart} alt="chart" className={styles.chart} />
+                </div>
             </ParallaxLayer>
 
             </Parallax>

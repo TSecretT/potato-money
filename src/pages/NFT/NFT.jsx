@@ -98,7 +98,7 @@ const NFT = () => {
         if(wallet){
             let balance = await lockToken.balanceOf(wallet);
             let allowance = await lockToken.allowance(wallet, lockPool.address);
-            if(allowance.gte(lockAmount)) setAllowed(true);
+            if(allowance) setAllowed(true);
             let canRedeem = await lockPool.canRedeem(wallet);
             let isLocked = await lockPool.isLocked(wallet);
             let unlockTime = await lockPool.unlockTime(wallet);
@@ -125,16 +125,16 @@ const NFT = () => {
         setPercent(45);
 
         if(wallet){
+            let isLocked = await lockPool.isLocked(wallet);
+            setLocked(60);
             let balance = await lockToken.balanceOf(wallet);
             setBalance(balance);
-            setPercent(60);
+            setPercent(75);
             let allowance = await lockToken.allowance(wallet, lockPool.address);
-            if(allowance.gte(lockAmount)) setAllowed(true);
+            if(allowance) setAllowed(true);
             let canRedeem = await lockPool.canRedeem(wallet);
             setRedeemable(canRedeem);
-            setPercent(75);
-            let isLocked = await lockPool.isLocked(wallet);
-            setLocked(90);
+            setPercent(90);
             let unlockTime = await lockPool.unlockTime(wallet);
             setUnlockTime(unlockTime);
             setPercent(100);
@@ -151,17 +151,24 @@ const NFT = () => {
 
     return (
         <>
-        <ReactParticles params={particlesConfig} style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0 }}/>
         <Row style={{ margin: "100px 0px" }}>
-            <Col xs={24} md={16}>
-                <div className={gStyles.col}>
-                    <span className={styles.header}>Very Rare NFT</span>
-                    <span className={clsx(styles.header, styles.info)}>Lock your <span className={styles.bigHeader}>BNB-Potato LP</span> token to get <span className={styles.bigHeader}>{tier.charAt(0).toUpperCase() + tier.slice(1)} Potato NFT</span></span>
-                    <div className={styles.nftContainer}>
-                        {loaded? (
-                            <>
-                            <span className={styles.text}><strong>{lockTotal}</strong>/1000 minted</span>
-                            <span className={styles.text}>Lock <strong>{lockAmount}</strong> {config.lockToken.symbol} for <strong>{lockDays} minutes</strong></span>
+            <Col xs={24} md={10}>
+                <div className={styles.cardContainer}>
+                    <img className={styles.image} src={tiers[tier]} alt='potato' />
+                </div>
+            </Col>
+            <Col xs={24} md={14}>
+                <div className={styles.container}>
+                    <span className={styles.header}>{tier.toUpperCase()} POTATO</span>
+                    <span className={styles.category}><strong>Category:</strong> POTATO LIMITED COLLECTION</span>
+                    <span className={gStyles.text} style={{ textAlign: "initial" }}>{config.NFT_TEXTS[tier]}</span>
+                    <div style={{ margin: "40px 0", display: "flex", flexDirection: "column" }}>
+                        <span className={styles.text}><strong>{lockTotal}</strong>/1000 minted</span>
+                        <span className={styles.text}>Lock <strong>{lockAmount}</strong> {config.lockToken.symbol} for <strong>{lockDays} minutes</strong></span>
+                        {/* <span className={clsx(styles.header, styles.info)}>Lock your <span className={styles.bigHeader}>BNB-Potato LP</span> token to get <span className={styles.bigHeader}>{tier.charAt(0).toUpperCase() + tier.slice(1)} Potato NFT</span></span> */}
+                    </div>
+                    {loaded? (
+                        <div className={styles.nftContainer}>
                             <span className={styles.text}>Your balance: <strong>{balance}</strong> BNB Potato</span>
                             {isLocked? <span className={styles.text}>You can redeem at: {moment(unlockTime*1000).format("HH:mm DD/MM/YYYY")}</span> :null}
                             {hash? <Alert className={styles.alert} type={processing? "info" : (!processing && error)? "error" : "success"} message={`Transaction HASH: ${hash}`} /> : null}
@@ -169,18 +176,13 @@ const NFT = () => {
                             {isLocked? (
                                 <Button type="ghost" loading={processing} onClick={onUnstake} className={styles.button} disabled={!redeemable}>Redeem</Button>
                             ) : <Button type="ghost" loading={processing} onClick={onStake} className={styles.button}>Lock {config.lockToken.symbol}</Button>}
-                            </>
-                        ) : (
-                            <Progress style={{ margin: 10 }} type="circle" percent={percent} showInfo={false} />
-                        )}
-                    </div>
+                        </div>
+                    ) : (
+                        <Progress trailColor="#232323" strokeColor="white" style={{ margin: 10 }} type="circle" percent={percent} showInfo={false} />
+                    )}
                 </div>
             </Col>
-            <Col xs={24} md={8}>
-                <div className={gStyles.container}>
-                    <img className={styles.image} src={tiers[tier]} alt='potato' />
-                </div>
-            </Col>
+            
         </Row>
         </>
     )

@@ -10,3 +10,13 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+.chartRow{
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+}
+
+.chart{
+    width: 50%;
+}

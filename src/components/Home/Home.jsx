@@ -10,7 +10,7 @@ import rocket from '../../assets/icons/rocket-launch.svg';
 const Home = () => {
 
     return(
-        <Row style={{ marginTop: 100 }}>
+        <Row style={{ marginTop: 50 }}>
             <Col xs={0} md={3} />
             <Col xs={24} md={8}>
                 <div className={styles.container}>

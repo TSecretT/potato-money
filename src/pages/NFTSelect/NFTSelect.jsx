@@ -37,11 +37,34 @@ const NFTSelect = () => {
             <Col xs={0} md={4}/>
             <Col xs={24} md={16}>
                 <div className={styles.container}>
-                    {[cards.map((card, i) => {return(
-                        <a href={`/nft/${card}`}>
-                            <img src={tiers[card]} alt="card" className={styles.card} />
-                        </a>
-                    )})]}
+                    <a href={`/nft/silver`} className={styles.cardContainer}>
+                        <img src={silverPotato} alt="card" className={styles.card} />
+                        <div className={styles.details}>
+                            <span className={styles.text}>Price: 30 BNB</span>
+                            <Button type="ghost" className={gStyles.button} style={{ height: 30, position: "absolute", bottom: 10 }}>View</Button>
+                        </div>
+                    </a>
+                    <a href={`/nft/gold`} className={styles.cardContainer}>
+                        <img src={goldPotato} alt="card" className={styles.card} />
+                        <div className={styles.details}>
+                            <span className={styles.text}>Price: 30 BNB</span>
+                            <Button type="ghost" className={gStyles.button} style={{ height: 30, position: "absolute", bottom: 10 }}>View</Button>
+                        </div>
+                    </a>
+                    <a href={`/nft/platinum`} className={styles.cardContainer}>
+                        <img src={platinumPotato} alt="card" className={styles.card} />
+                        <div className={styles.details}>
+                            <span className={styles.text}>Price: 30 BNB</span>
+                            <Button type="ghost" className={gStyles.button} style={{ height: 30, position: "absolute", bottom: 10 }}>View</Button>
+                        </div>
+                    </a>
+                    <a href={`/nft/diamond`} className={styles.cardContainer}>
+                        <img src={diamondPotato} alt="card" className={styles.card} />
+                        <div className={styles.details}>
+                            <span className={styles.text}>Price: 30 BNB</span>
+                            <Button type="ghost" className={gStyles.button} style={{ height: 30, position: "absolute", bottom: 10 }}>View</Button>
+                        </div>
+                    </a>
                 </div>
             </Col>
             <Col xs={0} md={4}/>

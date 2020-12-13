@@ -1,11 +1,32 @@
 .container{
-    display: block;
+    display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 450px;
+    border: 1px solid white;
+    background-color: #6B3B15;
+    border-radius: 30px;
+    position: relative;
+    margin: 10px;
 }
 
 .card{
-    width: 250px;
+    width: 100%;
     border-radius: 30px;
-    margin: 20px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }

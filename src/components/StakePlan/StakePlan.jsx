@@ -14,16 +14,14 @@ import potato_spaceport from '../../assets/icons/farm.png'
 import potato_planetstation from '../../assets/icons/potato-mars.png'
 
 const StakePlan = () => {
-    let history = useHistory();
-
     return (
         <div className={gStyles.container}>
-            <span className={gStyles.header}>Grow you potato here!</span>
+            <span className={gStyles.header}>Grow you POTATO here!</span>
             <div className={styles.cards}>
-                <StakeCard image={potato_field} tierName="POTATO FIELD" tokenName={<strong>BUSD</strong>} duration={<span><strong>1</strong> week</span>} percent={2} />
-                <StakeCard image={potato_greenhouse} tierName="POTATO GREENHOUSE" tokenName={<strong>WBNB</strong>} duration={<span><strong>1</strong> month</span>} percent={5} />
-                <StakeCard image={potato_spaceport} tierName="POTATO SPACEPORT" tokenName={<strong>WBNB-BUSD LP</strong>} duration={<span><strong>1</strong> year</span>} percent={10} />
-                <StakeCard hot image={potato_planetstation} tierName="POTATO PLANET STATION" tokenName={<strong>POTATO-BNB LP</strong>} duration={<span><strong>3</strong> years</span>} percent={17} />
+                <StakeCard image={potato_field} tierName="POTATO FIELD" tokenName="BUSD" duration={<span><strong>1</strong> week</span>} percent={2} />
+                <StakeCard image={potato_greenhouse} tierName="POTATO GREENHOUSE" tokenName="WBNB" duration={<span><strong>1</strong> month</span>} percent={5} />
+                <StakeCard image={potato_spaceport} tierName="POTATO SPACEPORT" tokenName="WBNB-BUSD LP" duration={<span><strong>1</strong> year</span>} percent={10} />
+                <StakeCard hot image={potato_planetstation} tierName="POTATO PLANET STATION" tokenName="POTATO-BNB LP" duration={<span><strong>3</strong> years</span>} percent={17} />
             </div>
         </div>
     )

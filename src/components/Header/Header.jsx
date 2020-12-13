@@ -46,10 +46,10 @@ const Header = ({scrollTo}) => {
                 <span className={gStyles.headerButton} onClick={() => navigateTo(0)}>Home</span>
             </Menu.Item>
             <Menu.Item>
-                <span className={gStyles.headerButton} onClick={() => navigateTo(1)}>NFT Farm</span>
+                <span className={gStyles.headerButton} onClick={() => navigateTo(1)}>NFT</span>
             </Menu.Item>
             <Menu.Item>
-                <span className={gStyles.headerButton} onClick={() => navigateTo(2)}>Stake</span>
+                <span className={gStyles.headerButton} onClick={() => navigateTo(2)}>Farming</span>
             </Menu.Item>
             <Menu.Item>
                 <span className={gStyles.headerButton} onClick={() => navigateTo(3)}>BATTLE</span>
@@ -67,8 +67,8 @@ const Header = ({scrollTo}) => {
                     </a>
                     <div className={clsx(gStyles.row, styles.buttons)}>
                         <Button type="text" className={gStyles.headerButton} onClick={() => navigateTo(0)}>Home</Button>
-                        <Button type="text" className={gStyles.headerButton} onClick={() => navigateTo(0.6)}>NFT Farm</Button>
-                        <Button type="text" className={gStyles.headerButton} onClick={() => navigateTo(1.2)}>Stake</Button>
+                        <Button type="text" className={gStyles.headerButton} onClick={() => navigateTo(0.6)}>NFT</Button>
+                        <Button type="text" className={gStyles.headerButton} onClick={() => navigateTo(1.2)}>Farming</Button>
                         <Button type="text" className={gStyles.headerButton}>BATTLE</Button>
                     </div>
                     {wallet? <span className={styles.wallet}><WalletOutlined /> ...{wallet.slice(wallet.length-10, wallet.length)}</span> : <Button type="ghost" className={styles.connectBtn} onClick={onConnectWallet}>Connect Metamask</Button>}
