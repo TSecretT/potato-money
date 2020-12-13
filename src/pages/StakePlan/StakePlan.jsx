@@ -238,7 +238,7 @@ const StakePlan = () => {
                 <div className={styles.block}>
                     <img src={seeding} alt="seeding" className={styles.icon} />
                     <p className={styles.text}><strong>{staked}</strong></p>
-                    <p className={styles.text}>staked</p>
+                    <p className={styles.text}>{tokens[tier]} staked</p>
                     {wallet && allowance > 0? (
                         <Button style={{ position: "absolute", bottom: 15 }} className={gStyles.button} type="ghost" onClick={() => { setModalVisible(true) }}>Stake</Button>
                     ) : (
