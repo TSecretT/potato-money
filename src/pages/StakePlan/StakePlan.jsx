@@ -146,8 +146,6 @@ const StakePlan = () => {
 
         // Get balance
         if(wallet){
-            console.log("wall", wallet)
-            setAllowance(await stakeToken_erc.allowance(wallet, STAKE_LOW.address))
             update();
             setInterval(update, 10000);
         }
@@ -155,12 +153,13 @@ const StakePlan = () => {
 
     const update = async () => {
         try{
+            setAllowance(await stakeToken_erc.allowance(wallet, STAKE_LOW.address))
             setTotalStaked(await contract.totalSupply());
             setRewards(await contract.earned(wallet))
             setStaked(await contract.balanceOf(wallet))
             setBalance(await stakeToken_erc.balanceOf(wallet))
         } catch(error){
-            console.log("Get Balance module error:", error)
+            
         }
     }
 
@@ -233,7 +232,7 @@ const StakePlan = () => {
                 <div className={styles.block}>
                     <img src={harvest} alt="harvest" className={styles.icon} />
                     <p className={styles.text}><strong>{rewards}</strong></p>
-                    <p className={styles.text}>earned</p>
+                    <p className={styles.text}>POTATO earned</p>
                     <Button style={{ position: "absolute", bottom: 15 }} className={gStyles.button} type="ghost" onClick={() => { if(wallet) setHarvestModalVisible(true) }}>Harvest</Button>
                 </div>
                 <div className={styles.block}>

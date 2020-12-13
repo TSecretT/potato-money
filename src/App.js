@@ -7,6 +7,9 @@ import StakePlan from './pages/StakePlan/StakePlan';
 import NFT from './pages/NFT/NFT';
 import NFTSelect from './pages/NFTSelect/NFTSelect';
 
+import ReactParticles from 'react-particles-js';
+import { particlesConfig } from './utils/particlesConfig';
+
 function App() {
 
 	let parallax;
@@ -21,6 +24,7 @@ function App() {
 
 	return (
 		<Router>
+			<ReactParticles params={particlesConfig} style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, heigth: 0 }}/>
 			<Header scrollTo={scrollTo}/>
 			<Switch>
 				<Route exact path="/" render={() => <Main scrollTo={scrollTo} setParallax={setParallax} />} />

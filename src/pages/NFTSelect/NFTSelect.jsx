@@ -3,8 +3,7 @@ import styles from './NFTSelect.module.css';
 import gStyles from '../../styles.module.css';
 
 
-import ReactParticles from 'react-particles-js';
-import { particlesConfig } from '../../utils/particlesConfig';
+
 import { Row, Col, Button } from 'antd';
 
 import Header from '../../components/Header/Header';
@@ -31,7 +30,6 @@ const NFTSelect = () => {
 
     return (
         <>
-        <ReactParticles params={particlesConfig} style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0 }}/>
         <Row justify="center" style={{ margin: "100px 0px" }}>
             <span className={gStyles.header}>Choose your NFT</span>
         </Row>
@@ -48,7 +46,6 @@ const NFTSelect = () => {
             </Col>
             <Col xs={0} md={4}/>
         </Row>
-        
         </>
     )
 }
