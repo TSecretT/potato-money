@@ -29,10 +29,10 @@ const tiers = {
 }
 
 const tokens = {
-    "potato-field" : "USDT",
-    "potato-greenhouse": "BUSD",
-    "potato-spaceport": "BNB",
-    "potato-planet-station": "BNB-POTATO LP"
+    "potato-field" : "BUSD",
+    "potato-greenhouse": "WBNB",
+    "potato-spaceport": "WBNB-BUSD LP",
+    "potato-planet-station": "POTATO-BNB LP"
 }
 
 const StakePlan = () => {
