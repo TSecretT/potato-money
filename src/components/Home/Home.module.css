@@ -3,7 +3,7 @@ span{
 }
 
 .uranus{
-    width: 475px;
+    width: 600px;
 }
 
 .rocket{
@@ -19,13 +19,11 @@ span{
 .title{
     font-weight: bold;
     font-size: 4vw;
-    margin: 10px 0;
 }
 
 .subTitle{
     font-weight: bold;
-    font-size: 4vw;
-    margin: 20px 0;
+    font-size: 2vw;
 }
 
 .p{

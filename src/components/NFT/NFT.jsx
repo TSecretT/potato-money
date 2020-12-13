@@ -15,17 +15,17 @@ const NFT = () => {
 
     return (
         <Row>
-            <Col xs={0} md={2} />
+            <Col xs={0} md={3} />
             <Col xs={24} md={5}>
-                <div className={gStyles.container}>
+                <div className={gStyles.container} style={{ alignItems: "flex-start" }}>
                     <span className={styles.exclusive}>Exclusive collection</span>
                     <p className={styles.limited}>POTATO Limited Edition</p>
-                    <p className={gStyles.text} style={{ margin: "40px 0" }}>Put your POTATO to work and and collect digital content that you can truly own</p>
-                    <Button type="ghost" className={gStyles.button} style={{ marginBottom: 20 }} onClick={() => history.push('/nft')}>Take your NFTs</Button>
+                    <p className={gStyles.text} style={{ textAlign: "initial" }}>Put your POTATO to work and and collect digital content that you can truly own</p>
+                    <Button type="ghost" className={gStyles.button} style={{ marginTop: 20 }} onClick={() => history.push('/nft')}>Take your NFTs</Button>
                 </div>
             </Col>
             <Col xs={0} md={1} />
-            <Col xs={0} md={16}>
+            <Col xs={0} md={15}>
                 <div className={styles.row} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "100%" }}>
                     <img className={styles.cardFull} src={silverPotato} alt="nft" />
                     <img className={styles.cardFull} src={goldPotato} alt="nft" />
