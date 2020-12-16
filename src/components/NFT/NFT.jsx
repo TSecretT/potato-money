@@ -9,6 +9,7 @@ import goldPotato from '../../assets/diamondPotato.jpg';
 import silverPotato from '../../assets/silverPotato.jpg';
 import diamondPotato from '../../assets/diamondPotato.jpg';
 import platinumPotato from '../../assets/platinumPotato.jpg';
+import clsx from 'clsx';
 
 const NFT = () => {
     const history = useHistory();
@@ -17,10 +18,10 @@ const NFT = () => {
         <Row>
             <Col xs={0} md={3} />
             <Col xs={24} md={5}>
-                <div className={gStyles.container} style={{ alignItems: "flex-start" }}>
+                <div className={clsx(gStyles.container, styles.container)}>
                     <span className={styles.exclusive}>Exclusive collection</span>
                     <p className={styles.limited}>POTATO Limited Edition</p>
-                    <p className={gStyles.text} style={{ textAlign: "initial" }}>Put your POTATO to work and and collect digital content that you can truly own</p>
+                    <p className={clsx(gStyles.text, styles.text)}>Put your POTATO to work and and collect digital content that you can truly own</p>
                     <Button type="ghost" className={gStyles.button} style={{ marginTop: 20 }} onClick={() => history.push('/nft')}>Take your NFTs</Button>
                 </div>
             </Col>

@@ -84,4 +84,7 @@ span{
     .blocks{
         flex-direction: column;
     }
+    .tier{
+        text-align: center;
+    }
 }

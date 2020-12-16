@@ -3,8 +3,8 @@ p{
 }
 
 .container{
-    min-height: 200px;
-    margin-top: 200px;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .exclusive{
@@ -20,7 +20,6 @@ p{
 
 .limited{
     font-size: 30px;
-    text-align: center;
 }
 
 .col{
@@ -66,15 +65,27 @@ p{
 }
 
 .icon{
-    width: 65px;
+    width: 65px; 
+}
+
+.text{
+    text-align: justify;
 }
 
 @media screen and (max-width: 1000px){
+    .container{
+        align-items: center;
+    }
     .card{
         width: 150px;
         border-radius: 8px;
     }
     .text{
         margin: 0px 20px;
+        text-align: center;
     }
+    .limited{
+        text-align: center;
+    }
+    
 }

@@ -34,8 +34,7 @@ const NFTSelect = () => {
             <span className={gStyles.header}>Choose your NFT</span>
         </Row>
         <Row >
-            <Col xs={0} md={4}/>
-            <Col xs={24} md={16}>
+            <Col xs={24} md={24}>
                 <div className={styles.container}>
                     <a href={`/nft/silver`} className={styles.cardContainer}>
                         <img src={silverPotato} alt="card" className={styles.card} />
@@ -67,7 +66,6 @@ const NFTSelect = () => {
                     </a>
                 </div>
             </Col>
-            <Col xs={0} md={4}/>
         </Row>
         </>
     )

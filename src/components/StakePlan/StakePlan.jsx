@@ -16,7 +16,7 @@ import potato_planetstation from '../../assets/icons/potato-mars.png'
 const StakePlan = () => {
     return (
         <div className={gStyles.container}>
-            <span className={gStyles.header}>Grow you POTATO here!</span>
+            <span className={gStyles.header} style={{ textAlign: "center" }}>Grow you POTATO here!</span>
             <div className={styles.cards}>
                 <StakeCard image={potato_field} tierName="POTATO FIELD" tokenName="BUSD" duration={<span><strong>1</strong> week</span>} percent={2} />
                 <StakeCard image={potato_greenhouse} tierName="POTATO GREENHOUSE" tokenName="WBNB" duration={<span><strong>1</strong> month</span>} percent={5} />
