@@ -1,5 +1,5 @@
 .card{
-    width: 300px;
+    width: 280px;
     border: 1px solid white;
     border-radius: 8px;
     margin: 15px;
@@ -7,6 +7,10 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+}
+
+.card:hover{
+    border: 0px;
 }
 
 .image{
@@ -37,14 +41,6 @@
     margin-bottom: 20px;
 }
 
-.tierName:hover{
-    color: orange;
-}
-
-.tierNameHot:hover{
-    color: orange;
-}
-
 .text{
     height: 35px;
     font-size: 18px;
@@ -55,6 +51,63 @@
 
 .link{
     color: white;
+}
+
+/* .cssSelector {
+    background: linear-gradient(270deg, #4844ff, #ff4444);
+    background-size: 400% 400%;
+
+    -webkit-animation: ButtonSelect 5s ease infinite;
+    -moz-animation: ButtonSelect 5s ease infinite;
+    animation: ButtonSelect 5s ease infinite;
+}
+
+@-webkit-keyframes ButtonSelect {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes ButtonSelect {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes ButtonSelect {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+} */
+
+.gradientBorder {
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+}
+.gradientBorder:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @media screen and (max-width: 660px){

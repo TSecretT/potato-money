@@ -11,8 +11,8 @@ const Home = () => {
 
     return(
         <Row style={{ marginTop: 50 }}>
-            <Col xs={0} md={3} />
-            <Col xs={24} md={8}>
+            <Col xs={0} sm={1} xxl={3} />
+            <Col xs={24} sm={10} xxl={8}>
                 <div className={styles.container} style={{ justifyContent: "center", height: "100%" }}>
                     <span className={styles.title}>POTATO MONEY</span>
                     <span className={styles.subTitle}>Farm NFTs and win BATTLES</span>
@@ -22,8 +22,8 @@ const Home = () => {
                     </div>
                 </div>
             </Col>
-            <Col xs={0} md={1} />
-            <Col xs={0} md={9}>
+            <Col xs={0} sm={1} />
+            <Col xs={0} sm={11} xxl={9}>
                 <div className={styles.container} style={{ alignItems: "center" }}>
                     <img className={styles.uranus} src={uranus} alt="uranus" />
                     <Button onClick={() => {}} className={styles.button} type="ghost">
@@ -32,7 +32,7 @@ const Home = () => {
                     </Button>
                 </div>
             </Col>
-            <Col xs={0} md={3} />
+            <Col xs={0} sm={1} xxl={3} />
         </Row>
     )
 }
