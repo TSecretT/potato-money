@@ -69,7 +69,7 @@ const Header = ({scrollTo}) => {
                         <Button type="text" className={gStyles.headerButton} onClick={() => navigateTo(0)}>Home</Button>
                         <Button type="text" className={gStyles.headerButton} href="/nft">NFT</Button>
                         <Button type="text" className={gStyles.headerButton} onClick={() => navigateTo(1)}>Farming</Button>
-                        <Button type="text" className={gStyles.headerButton}>BATTLE</Button>
+                        <Button type="text" className={gStyles.headerButton} href="/game" >BATTLE</Button>
                     </div>
                     {wallet? <span className={styles.wallet}><WalletOutlined /> ...{wallet.slice(wallet.length-10, wallet.length)}</span> : <Button type="ghost" className={styles.connectBtn} onClick={onConnectWallet}>Connect Metamask</Button>}
                 </Row>

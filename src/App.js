@@ -6,6 +6,7 @@ import Main from './pages/Main/Main';
 import StakePlan from './pages/StakePlan/StakePlan';
 import NFT from './pages/NFT/NFT';
 import NFTSelect from './pages/NFTSelect/NFTSelect';
+import Reacteroids from './pages/Game/Reacteroids';
 
 import ReactParticles from 'react-particles-js';
 import { particlesConfig } from './utils/particlesConfig';
@@ -31,6 +32,7 @@ function App() {
 				<Route exact path="/stake/:tier" component={StakePlan} />
 				<Route exact path="/nft/:tier" component={NFT} />
 				<Route exact path="/nft/" component={NFTSelect} />
+				<Route exact path="/game" component={Reacteroids} />
 			</Switch>
 		</Router>
 	);
